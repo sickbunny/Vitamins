@@ -1,0 +1,277 @@
+$standard-padding: 10px;
+$primary-color: rgb(28, 25, 25);
+$background-color: rgb(178, 173, 173);
+
+
+*, *::after, *::before { margin: 0; box-sizing: border-box; transition: all 0.3s ease-out; }
+:root { font-family: 'Quantico', serif; background-color: rgb(218, 213, 213); }
+
+
+//styling main form and container
+.form-container {
+    padding: $standard-padding;
+    width: 100%;
+    margin: 0 auto;
+    min-width: max-content;
+    background-color: $background-color;
+
+    
+
+    .main-form { 
+        margin: 0 auto; 
+        width: max-content; 
+        padding: $standard-padding; 
+        //border: 1px dotted red; 
+        @media (orientation: landscape) and (max-device-width: 920px) {
+                width: 100%;
+                display: grid;
+                grid-template-columns: repeat(3, max-content);
+                justify-content: center;
+                justify-items: start;
+                gap: 25px;
+        }
+    }
+}
+//message-php div
+.message-php {
+    height: auto;
+    margin: auto;
+    padding: 20px;
+    color: linen;
+    text-align: center;
+    background-color: $background-color;
+
+    li { list-style: none; text-align: center; }
+    
+}
+//fieldset box styling
+.field-box {//pill_type field
+    gap: 8px;
+    border: none;
+    display: grid;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    grid-template-columns: 20px 75px;
+    @media (orientation: landscape) and (max-device-width: 920px) {
+        margin-top: 0px;
+    margin-bottom: 0px;
+  }
+    
+}
+.day-night-field { //checkbox field
+    border: none;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.grid-box { //text input fields/sections
+    gap: 8px;
+    display: grid;
+    font-size: 16px;
+    justify-content: start;
+    grid-template-columns: auto;
+    @media (orientation: landscape) and (max-device-width: 920px) {
+          width: max-content;
+          font-size: 18px;
+          gap: 10px;
+          grid-row: 1/3;
+    }
+}
+.benefits-div {
+    margin-bottom: 40px;
+    @media (orientation: landscape) and (max-device-width: 920px) {
+        &{
+            grid-column: 1/3;
+            margin-bottom: 0px;
+          }
+    }
+}
+.pill-type-div {
+    @media (orientation: landscape) and (max-device-width: 920px) {
+        &{
+            grid-column: 2/3;
+          }
+
+    }
+}
+.day-night-div {
+    @media (orientation: landscape) and (max-device-width: 920px) {
+        &{
+            grid-column: 2/3;
+            grid-row: 2/3;
+          }
+
+    }
+}
+//styling inputs
+input {
+   &.text-input {
+        height: 25px;
+        width: 200px;
+        border: none;
+        outline: none;
+        font-size: 18px;
+        background: transparent;
+        border-bottom: 1px solid black;
+
+        &:focus { 
+            border: 1px solid #000000; 
+            background: #cac7c7;
+            border-style: inset;
+            border-top: 2px solid black;
+            border-left: 2px solid black; }
+    }
+    &.submit-btn {
+        height: 30px;
+        width: 100px;
+        border: none;
+        border-radius: 10px;
+        background-color: #000000;
+        color: rgb(213, 206, 206);
+        @media (orientation: landscape) and (max-device-width: 920px) {
+            & {
+                grid-column: 1/3;
+              }
+    
+        }
+        
+    }
+
+    &.day-night, 
+    &.pill-radio {
+        top: 4px;
+        width: 16px;
+        height: 16px;
+        border-radius: 4px;
+        position: relative;
+        accent-color: darkmagenta;
+    }
+
+   //removing the arrow styling from number field
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+        /* Chrome, Safari, Edge, Opera */
+        -webkit-appearance: none;
+        margin: 0;
+    }
+    &[type=number] {
+        /* Firefox */
+        -moz-appearance: textfield;
+             appearance: textfield;
+    }
+}
+
+//text area styling
+.textarea-block { 
+    width: 325.26px; 
+    font-size: 16px;
+    background-color: rgb(183, 180, 180);
+    
+    &:focus {
+        outline: none;
+        border: 2px solid black;
+        background-color: rgb(140, 151, 161);
+    }
+  }
+
+
+//custom checkbox styling
+.custom-checkbox {
+    position: relative;
+    padding-bottom: 5px;
+
+    input {
+        transform: scale(0);
+
+        + label::before {
+            left: 0;
+            content: "";
+            width: 16px;
+            height: 16px;
+            margin-top: 3px;
+            border: 1px solid;
+            position: absolute;
+            background-color: #000000;
+            box-shadow: 2px 1px 3px rgba(66, 65, 65, 0.5),
+            -2px -1px 3px rgba(66, 65, 65, 0.5);
+        }
+
+        +label::after {
+            opacity: 0;
+            left: 3px;
+            bottom: 6px;
+            content: "X";
+            font-weight: 700;
+            position: absolute;
+            color: darkmagenta;
+        }
+    }
+    input {
+        &:focus {
+            +label::before {
+                background-color: rgb(9, 243, 72);
+            }
+        }
+        &:checked {
+            + label::after {
+                opacity: 1;
+            }
+        }
+
+    }
+
+}
+//styling labels
+legend {
+    font-size: 20px;
+    text-decoration: underline;
+}
+.checkbox-label { padding-left: 10px; }
+.benefits-label {
+    display: block;
+    font-size: 20px;
+    padding-bottom: 10px;
+}
+
+  // text-input label animations
+  .label-group {
+    height: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    position: relative;
+
+    .textbox-label {
+        left: 10px;
+        color: #454645;
+        position: absolute;
+        pointer-events: none;
+        transition: all 0.3s ease-out;
+    }
+
+    //&:focus-within {
+    //    .textbox-label {
+    //        -moz-transform: translateY(-16px) translateX(-12px);
+    //        transform: translateY(-16px) translateX(-12px);
+    //        font-size: 12px;
+    //        color: #ae06a6;
+    //     }
+    //}
+
+    //.text-input:focus, 
+    &:has(.text-input:valid) {
+        .textbox-label {
+            -moz-transform: translateY(-16px) translateX(-12px);
+    transform: translateY(-16px) translateX(-12px);
+    font-size: 12px;
+    color: #ae06a6;
+        }
+    }
+}
+
+
+
+@media (orientation: landscape) and (max-device-width: 920px) {
+    
+      .form-br {
+        width: max-content;
+      }
+}

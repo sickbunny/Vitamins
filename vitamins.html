@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang ='en'>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1" >
+        <title>Vitamin Log</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Quantico&family=Roboto+Slab:wght@400;600;900&display=swap" rel="stylesheet">
+        <link rel="styleSheet" href="CSS/test.css" >
+        <script defer="defer" type="text/javascript" src="javscript.js"></script>
+    </head>
+    <body>
+        <div class="form-container">
+            <form class="main-form" action="" method="POST" id="vitaminForm" enctype="multipart/form-data">
+                <!-- text input main area -->
+                <div class="grid-box">
+                    <!-- individual text-inputs with (class) .label-group this include the label and input in a div -->
+                    <div class="label-group">
+                        <label class="textbox-label labels-all" for="name">Vitamin name </label>
+                        <input class="text-input inputs-all" id="name" name="name" type="text" maxlength="50" required>
+                    </div>
+
+                    <div class="label-group">
+                        <label class="textbox-label labels-all" id='brand-label' for="brand">Manufacturer Name</label>
+                        <input class="text-input inputs-all" id="brand" name="brand" type="text" maxlength="25" required> 
+                    </div>
+
+                    <div class="label-group">
+                        <label class=" textbox-label labels-all" id="serve-label" for="serve-size">recommended Serving</label>
+                        <input class="text-input inputs-all" id="serve-size" name="serve-size" type="text" required>
+
+                    </div>
+                    
+                    <div class="label-group">
+                        <label class="textbox-label labels-all" for="dosage">MG/MCG Dosage</label>
+                        <input class="text-input inputs-all" id="dosage" name="dosage" type="text" required>
+                    </div>
+                    
+                    <div class="label-group">
+                        <label class="textbox-label labels-all" for="my-serve">What I take</label>
+                        <input class="text-input inputs-all" id="my-serve" name="my-serve" type="number" min="0" max="5" required>
+                    </div>
+                </div>
+
+
+                <!-- pill-type radio buttons -->
+                <div class="pill-type-div form-br">
+                    <fieldset class="field-box">
+                        <legend>Pill type</legend>
+        
+                        <input class="inputs-all pill-radio" id="pill-type1" name="pill-type" type="radio" value="capsule" checked>
+                        <label class="radio-label labels-all" for="pill-type1">Capsule</label>
+        
+                        <input class="inputs-all pill-radio" id="pill-type2" name="pill-type" type="radio" value="tablet">
+                        <label class="radio-label labels-all" for="pill-type2" >Tablet</label>
+        
+                        <input class="inputs-all pill-radio" id="pill-type3" name="pill-type" type="radio" value="softgel">
+                        <label class="radio-label labels-all" for="pill-type3" >Softgel</label>
+                    </fieldset>
+                </div>
+
+                <!-- when taken divs (day - night - as needed) -->
+                <div class="day-night-div main-box form-br">
+                    <fieldset class="day-night-field">
+                        <legend>Daily / Nightly</legend>
+                            <div class="custom-checkbox">
+                                <input class="inputs-all day-night" id="day" name="day" type="checkbox" value="1">
+                                <label class="day-label checkbox-label labels-all" for="day">Day Time</label>
+                            </div>
+
+                            <div class="custom-checkbox">
+                                <input class="inputs-all day-night" id="night" name="night" type="checkbox" value="1">
+                                <label class="night-label checkbox-label labels-all" for="night">Night Time</label>
+                            </div>
+
+                            <div class="custom-checkbox">
+                                <input class="inputs-all day-night" id="as-needed" name="as-needed" type="checkbox" value="1">
+                                <label class="asNeeeded-label checkbox-label labels-all" for="as-needed">As Needed</label>
+                            </div>
+                    </fieldset>
+                </div>
+
+                <!-- TODO add area to ask days taken, everyday, only some days, once a week etc... -->
+             
+                <!-- benefits textarea box and label -->
+                <div class="benefits-div form-br">
+                    <label class="benefits-label labels-all" for="benefits">Benefits Of Vitamin or Supplement</label>
+                    <textarea class="text-input textarea-block" id="benefits" name="benefits" rows="8" cols="60" form="vitaminForm" placeholder="Include any benefits this Vitamin or Supplement gives you..."></textarea>
+                </div>
+                
+                <!-- plain old submit button -->
+                <input class="submit-btn" type="submit" name="submit" id="submit" value="submit">
+            </form>
+            
+            <!-- empty div that displays a message once form is submitted -->
+            <div class="message-php"></div>
+        </div>
+        
+
+    </body>
+
+</html>

@@ -1,0 +1,39 @@
+body {
+    background-color: black;
+    color: white;
+    font-family: 'Quantico';
+}
+nav {
+    margin-bottom: 2rem;
+    ul{
+        display: grid;
+        grid-template-columns: auto auto;
+        justify-content: end;
+        gap: 20px;
+
+        li {
+            list-style: none;
+
+            a {
+                text-decoration: none;
+                color: darkmagenta;
+                font-size: 20px;
+
+                &:hover {
+                    color: blue;
+                }
+            }
+        }
+    }
+}
+.main-words {
+    width: 50%;
+    text-align: center;
+    margin: 0 auto;
+}
+.form-field {
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: space-around;
+    
+}

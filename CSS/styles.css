@@ -1,0 +1,188 @@
+*, *::after, *::before {
+    box-sizing: border-box;
+    margin: 0;
+}
+:root {
+    font-family: 'Quantico', serif;
+    background-color: rgb(154, 151, 151);
+}
+
+.form-container {
+    width: max-content;
+    padding: 10px;
+    background-color: rgb(169, 172, 172);
+    margin: 10px auto;
+}
+.main-form {
+    margin: 0 auto;
+}
+/* setting sizes for inputs block, checkboxes and radio buttons*/
+.inputs-all:not(.day-night, .pill-radio) {
+    width: 200px;
+    height: 25px;
+    border-bottom: 2px solid black;
+    background: transparent;
+    font-size: 18px;
+}
+/*checkbox / Radio size styling */
+.day-night, .pill-radio {
+    border-radius: 4px;
+    width: 16px;
+    height: 16px;
+    accent-color: darkmagenta;
+    top: 2px;
+    position: relative;
+}
+
+    
+
+/* styling for SUBMIT button*/
+.submit-btn {
+    border: none;
+    border-radius: 10px;
+    width: 100px;
+    height: 30px;
+    background-color: black;
+    color: rgb(213, 206, 206);
+}
+/*pill type box grid styling*/
+.field-box {
+    width: 25%;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    border: none;
+    display: grid;
+    grid-template-columns: 20px 150px;
+    gap: 8px;
+}
+.checkbox-label {
+    padding-left: 10px;
+}
+/* SHIT for custom checkboxes fuck!!!!*/
+.day-night-field {
+    margin-bottom: 10px;
+    margin-top: 10px;
+    border: none;
+}
+.custom-checkbox {
+    position: relative;
+    padding-bottom: 5px;
+}
+/*hiding the orignal checkboxes but still accessible*/
+.custom-checkbox input {
+	opacity: 0%;
+}
+.custom-checkbox input + label::before {
+	border: 1px solid;
+	content: "";
+	height: 16px;
+	left: 0;
+	position: absolute;
+	width: 16px;
+    margin-top: 3px;
+    background-color: #000000;
+    box-shadow: 2px 2px 8px 
+    rgba(0, 0, 0, 0.4)
+, -2px -2px 8px rgba(0, 0, 0, 0.4);
+}
+.custom-checkbox input + label::after {
+    content: "X";
+    font-weight: 700;
+    color: darkmagenta;
+	left: 3px;
+    bottom: 6px;
+	opacity: 0;
+	position: absolute;
+}
+.custom-checkbox input:checked + label::after {
+	opacity: 1;
+}
+
+
+/*textarea stlying block*/
+.textarea-block {
+    width: 25rem;
+}
+/* styling for labels and small text boxes */
+.grid-box {
+    font-size: 16px;
+    display: grid;
+    grid-template-columns: auto;
+    justify-content: start;
+    gap: 8px;
+}
+.text-input {
+    outline: none;
+    border: none;
+  }
+  .text-input:focus {
+    border: 1px solid #000000;
+  }
+  legend {
+    font-size: 20px;
+    text-decoration: underline;
+  }
+  .benefits-label {
+    display: block;
+    padding-bottom: 10px;
+    font-size: 20px;
+  }
+
+  /* Message div stlying*/
+.message-php {
+   
+    height: auto;
+    padding: 20px;
+    margin: auto;
+    text-align: center;
+    background-color: rgb(169, 172, 172);
+    color: linen;
+}
+.message-php li {
+    list-style: none;
+    text-align: left;
+}
+
+
+/*label animation crap*/
+
+.label-group {
+    position: relative;
+    height: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px
+}
+.textbox-label {
+    position: absolute;
+    left: 10px;
+    transition: all 0.2s ease-out;
+    pointer-events: none;
+    color: #454645;
+}
+.label-group .text-input {
+    width: 200px;
+}
+/*
+@supports selector(:has(.textinput:focus)) {
+    .textbox-label {
+      font-size: 20px;
+    }
+  }
+  */
+  /* not sure but needed to work properly in firefox*/
+.label-group:focus-within .textbox-label {
+    -moz-transform: translateY(-16px) translateX(-12px);
+    transform: translateY(-16px) translateX(-12px);
+    font-size: 12px;
+    color: #080808;
+ }
+
+/* moves lable up and to the left*/
+ .label-group:has(.text-input:focus, .text-input:valid) .textbox-label  {
+    -moz-transform: translateY(-16px) translateX(-12px);
+    transform: translateY(-16px) translateX(-12px);
+    font-size: 12px;
+    color: #080808;
+ }
+
+ 

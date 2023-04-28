@@ -1,0 +1,38 @@
+body {
+  background-color: black;
+  color: white;
+  font-family: "Quantico";
+}
+
+nav {
+  margin-bottom: 2rem;
+}
+nav ul {
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: end;
+  gap: 20px;
+}
+nav ul li {
+  list-style: none;
+}
+nav ul li a {
+  text-decoration: none;
+  color: darkmagenta;
+  font-size: 20px;
+}
+nav ul li a:hover {
+  color: blue;
+}
+
+.main-words {
+  width: 50%;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.form-field {
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: space-around;
+}/*# sourceMappingURL=main.css.map */
