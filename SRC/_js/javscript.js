@@ -7,7 +7,7 @@ form.addEventListener('submit', function(e) {
     
     formData = new FormData(form);
     
-      fetch('database.php', {
+      fetch('_php/database.php', {
         method: 'POST',
         body: formData
       })
