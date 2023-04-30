@@ -1,14 +1,6 @@
-*, *:before, *:after {
-    box-sizing: border-box; 
-    transition: all 0.3s ease-out;
-    margin:0px
-}
+*, *::after, *::before { margin: 0; box-sizing: border-box; transition: all 0.3s ease-out; }
+:root { font-family: 'Quantico', serif; background-color: rgb(218, 213, 213); }
 
-:root { 
-    font-family: 'Quantico', serif; 
-    background-color: rgb(218, 213, 213); 
-    margin: 0px;
-}
 body {
     color: rgb(73, 72, 72);
     font-family: 'Quantico';
@@ -31,7 +23,7 @@ nav {
     }
     ul{
         display: grid;
-        grid-template-columns: auto auto;
+        grid-template-columns: auto auto auto;
         justify-content: end;
         gap: 20px;
         margin-top: 0.5rem;
@@ -75,7 +67,6 @@ nav {
     border: 2px solid green;
     
     .form-section {
-        line-height: 0.5rem;
         padding-bottom: 0.625rem;
         border: 2px solid red;
     }
